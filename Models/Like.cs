@@ -13,7 +13,7 @@ public record Like
     public LikeDTO asDto => new LikeDTO
     {
         Id = Id,
-        CreatedAt = CreatedAt,
+        // CreatedAt = CreatedAt,
         PostId = PostId,
         UserId = UserId
     };

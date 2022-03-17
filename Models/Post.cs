@@ -15,7 +15,7 @@ public record Post
     {
         Id = Id,
         TypeOfPost = TypeOfPost,
-        CreatedAt = CreatedAt,
+        // CreatedAt = CreatedAt,
         UserId = UserId
     };
 }

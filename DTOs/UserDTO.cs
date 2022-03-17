@@ -27,7 +27,7 @@ public record class UserDTO
 
 public record class UserCreateDTO
 {
-    public int Id { get; set; }
+    // public int Id { get; set; }
 
     [JsonPropertyName("name")]
     public string Name { get; set; }

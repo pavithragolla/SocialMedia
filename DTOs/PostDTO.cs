@@ -10,9 +10,9 @@ public record PostDTO
     [JsonPropertyName("type_of_post")]
 
     public string  TypeOfPost { get; set; }
-    [JsonPropertyName("createdt")]
+    // [JsonPropertyName("createdt")]
 
-    public DateTimeOffset CreatedAt { get; set; }
+    // public DateTimeOffset CreatedAt { get; set; }
     [JsonPropertyName("user_id")]
 
     public int UserId { get; set; }
@@ -23,14 +23,14 @@ public record PostDTO
 
 public record PostCreateDTO
 {
-    [JsonPropertyName("id")]
+    // [JsonPropertyName("id")]
 
-    public int Id { get; set; }
+    // public int Id { get; set; }
     [JsonPropertyName("type_of_post")]
     public string  TypeOfPost { get; set; }
 
-    [JsonPropertyName("created")]
-    public DateTimeOffset CreatedAt { get; set; }
+    // [JsonPropertyName("created")]
+    // public DateTimeOffset CreatedAt { get; set; }
 
     [JsonPropertyName("user_id")]
     public int UserId { get; set; }

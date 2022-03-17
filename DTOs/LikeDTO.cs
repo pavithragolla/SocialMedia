@@ -9,8 +9,8 @@ public record LikeDTO
    public int Id { get; set; }
 
 
-    [JsonPropertyName("createdat")]
-    public DateTimeOffset CreatedAt  { get; set; }
+    // [JsonPropertyName("createdat")]
+    // public DateTimeOffset CreatedAt  { get; set; }
     [JsonPropertyName("post_id")]
 
     public int PostId { get; set; }
@@ -20,13 +20,13 @@ public record LikeDTO
 
 public record LikeCreateDTO
 {
-    [JsonPropertyName("id")]
+//     [JsonPropertyName("id")]
 
-   public int Id { get; set; }
+//    public int Id { get; set; }
 
-    [JsonPropertyName("createdat")]
+    // [JsonPropertyName("createdat")]
 
-    public DateTimeOffset CreatedAt  { get; set; }
+    // public DateTimeOffset CreatedAt  { get; set; }
 
     [JsonPropertyName("post_id")]
     public int PostId { get; set; }

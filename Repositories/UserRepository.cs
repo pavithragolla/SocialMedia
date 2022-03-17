@@ -23,8 +23,8 @@ public class UserRepository : BaseRepository, IUserRepository
     public async Task<User> Create(User Item)
     {
         var createQuery = $@"INSERT INTO ""user""(
-	id, date_of_birth, mobile, email, gender, name)
-	VALUES (@Id, @DateOfBirth,@Mobile,@Email,@Gender,@Name) RETURNING *";
+	name, DOB, mobile, email, gender )
+	VALUES (,@Name, @DOB,@Mobile,@Email,@Gender) RETURNING *";
 
         using (var connection = NewConnection)
         {
@@ -50,7 +50,7 @@ public class UserRepository : BaseRepository, IUserRepository
     public async Task<bool> Update(User Item)
     {
         var updateQuery = $@"UPDATE ""user""
-	SET  name=@Name,  date_of_birth=@DateOfBirth, mobile=@Mobile, email=@Email, gender=@Gender WHERE id =@Id";
+	SET  mobile=@Mobile, email=@Email WHERE id =@Id";
 
         using (var connection = NewConnection)
         {

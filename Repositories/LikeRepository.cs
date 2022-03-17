@@ -24,7 +24,7 @@ public class LikeRepository : BaseRepository, ILikeRepository
 
     public async Task<Like> Create(Like Item)
     {
-        var createQuery = $@"INSERT INTO ""like""(id, user_id, post_id, createdat) VALUES (@Id, @UserId, @PostId, @CreatedAt) RETURNING *;";
+        var createQuery = $@"INSERT INTO ""like""(user_id, post_id, createdat) VALUES ( @UserId, @PostId, @CreatedAt) RETURNING *;";
         using (var connection = NewConnection)
             return await connection.QuerySingleAsync<Like>(createQuery, Item);
     }

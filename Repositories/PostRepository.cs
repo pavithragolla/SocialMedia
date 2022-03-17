@@ -26,7 +26,7 @@ public class PostRepository : BaseRepository, IPostRepository
     public async Task<Post> Create(Post Item)
     {
 
-        var createQuery = $@"INSERT INTO public.Post(id, type_of_post, user_id) VALUES (@Id, @TypeOfPost, @UserId) RETURNING *;";
+        var createQuery = $@"INSERT INTO public.Post( type_of_post, user_id) VALUES (@TypeOfPost, @UserId) RETURNING *;";
         using (var connection = NewConnection)
             return await connection.QuerySingleAsync<Post>(createQuery, Item);
 
@@ -69,7 +69,7 @@ public class PostRepository : BaseRepository, IPostRepository
 
     public async Task Update(Post Item)
     {
-        var updateQuery = $@"UPDATE Post SET name= @Name, os_address = @OsAddress, type =@Type, empdet_employee_number = @EmpdetEmployeeNumber WHERE id=@Id";
+        var updateQuery = $@"UPDATE Post SET type_of_post = @TypeOfPost WHERE id=@Id";
         using (var connection = NewConnection)
             await connection.ExecuteAsync(updateQuery, Item);
     }

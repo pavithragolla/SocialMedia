@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace SocialMedia.Controllers;
 
 [ApiController]
-[Route("api/Post")]
+[Route("api/post")]
 
 public class PostController : ControllerBase
 {
@@ -33,7 +33,7 @@ public class PostController : ControllerBase
 
         var toCreatePost = new Post
         {
-            Id = Data.Id,
+            // Id = Data.Id,
             TypeOfPost = Data.TypeOfPost.Trim(),
             UserId = Data.UserId
         };
@@ -56,7 +56,7 @@ public class PostController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    public async Task<ActionResult> UpdatePost([FromRoute] int id, [FromBody] PostCreateDTO Data)
+    public async Task<ActionResult> UpdatePost([FromRoute] int id, [FromBody] PostUpdateDTO Data)
     {
         var existing = await _Post.GetById(id);
         if (existing is null)
@@ -65,7 +65,6 @@ public class PostController : ControllerBase
         var toUpdateItem = existing with
         {
             TypeOfPost = Data.TypeOfPost.Trim(),
-            UserId = Data.UserId,
         };
         await _Post.Update(toUpdateItem);
 

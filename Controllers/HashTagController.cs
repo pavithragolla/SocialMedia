@@ -27,9 +27,6 @@ public class HashTagController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<List<HashTag>>> CreateHashTag([FromBody] HashTagCreateDTO Data)
     {
-        // var user = await _HashTag.GetById(Data.Id);
-        // if (user is null)
-        //     return NotFound("No HashTags found with given user id");
 
         var toCreateHashTag = new HashTag
         {

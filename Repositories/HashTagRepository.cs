@@ -25,7 +25,7 @@ public class HashTagRepository : BaseRepository, IHashTagRepository
     public async Task<HashTag> Create(HashTag Item)
     {
 
-    var createQuery = $@"INSERT INTO public.hashtag(id, name) VALUES (@Id, @Name) RETURNING *";
+    var createQuery = $@"INSERT INTO public.hashtag( name) VALUES ( @Name) RETURNING *";
     using(var connection = NewConnection)
         return await connection.QuerySingleAsync<HashTag>(createQuery,Item);
     
