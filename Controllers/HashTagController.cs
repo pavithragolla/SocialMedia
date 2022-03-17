@@ -41,38 +41,6 @@ public class HashTagController : ControllerBase
         return StatusCode(StatusCodes.Status201Created);
     }
 
-
-    // [HttpDelete("{id}")]
-    // public async Task<ActionResult> DeleteHashTag([FromRoute] int id)
-    // {
-    //     var existing = await _HashTag.GetById(id);
-    //     if (existing is null)
-    //         return NotFound("No HashTags found with given id");
-
-    //     await _HashTag.Delete(id);
-
-    //     return NoContent();
-    // }
-
-    // [HttpPut("{id}")]
-    // public async Task<ActionResult> UpdateHashTag([FromRoute] int id, [FromBody] HashTagUpdateDTO Data)
-    // {
-    //     var existing = await _HashTag.GetById(id);
-    //     if (existing is null)
-    //         return NotFound("No HashTag found to update with given id");
-
-    //     var toUpdateItem = existing with
-    //     {
-    //         Name = Data.Name.Trim()
-    //     };
-    //     await _HashTag.Update(toUpdateItem);
-
-
-    //     return NoContent();
-
-    // }
-
-
     [HttpGet("{id}")]
     public async Task<ActionResult<HashTag>> GetHashTagByID([FromRoute] int id)
     {

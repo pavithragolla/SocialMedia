@@ -33,15 +33,6 @@ public class HashTagRepository : BaseRepository, IHashTagRepository
 
 
 
-    // public async Task Delete(int Id)
-    // {
-    //     var deleteQuery =$@"DELETE FROM public.hashtag WHERE id = @Id";
-
-    //     using(var connection = NewConnection)
-    //     await connection.ExecuteAsync(deleteQuery, new {Id});
-    // }
-
-
     public async Task<List<HashTag>> GetAll()
     {
         var getallQuery = $@"SELECT * FROM hashtag WHERE id = @Id";
