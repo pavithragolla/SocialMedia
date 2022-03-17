@@ -81,10 +81,10 @@ public class PostController : ControllerBase
             return NotFound("No post is found with given id");
         var dto = post.asDto;
 
-         dto.Like = (await _Like.GetAllForPost(id)).Select(x => x.asDto).ToList();
+        dto.Like = (await _Like.GetAllForPost(id)).Select(x => x.asDto).ToList();
         //dto.Like = (await _Like.GetAllForPost(post.Id)).asDto;
-        
-        
+
+
 
         return Ok(dto);
     }

@@ -39,11 +39,11 @@ public class LikeRepository : BaseRepository, ILikeRepository
 
     public async Task<List<Like>> GetAllForPost(int Id)
     {
-        var getallQuery = $@"SELECT * FROM ""like"" WHERE id = @Id";
+        var getallQuery = $@"SELECT * FROM ""like"" WHERE id = @post_id";
 
         using (var connection = NewConnection)
-            // return (await connection.QueryAsync<Like>(getallQuery, new {post_id=Id})).AsList();
-            return (await connection.QueryAsync<Like>(getallQuery)).AsList();
+            return (await connection.QueryAsync<Like>(getallQuery, new {post_id=Id})).AsList();
+            // return (await connection.QueryAsync<Like>(getallQuery)).AsList();
     }
 
 
